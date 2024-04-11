@@ -16,30 +16,26 @@ int main () {
 	
 	for(i = 0; i < DISCIPLINAS; i++){
 		system("cls || clear");
-		printf("Digite o nome da %iª disciplina: ", i + 1);		
+		printf("Digite o nome da %iÂª disciplina: ", i + 1);		
 		scanf("%s",&disciplinas[i]);
 		
 		for(j = 0; j < NOTAS; j++){
-			printf("Digite a %iª nota: ", j + 1);		
+			printf("Digite a %iÂª nota: ", j + 1);		
 			scanf("%f",&notas[i][j]);
 			
-			if (notas[i][j] < 0 || notas[i][j] > 10){
-				do {
-					printf("Nota inválida, informe um valor entre 0 e 10. \n");
-					printf("Digite a %iª nota: ", j + 1);
-					scanf("%f",&notas[i][j]);
-				} while (notas[i][j] < 0 || notas[i][j] > 10);
+			while (notas[i][j] < 0 || notas[i][j] > 10){
+				printf("Nota invÃ¡lida, informe um valor entre 0 e 10. \n");
+				printf("Digite a %iÂª nota: ", j + 1);
+				scanf("%f",&notas[i][j]);
 			}
 			
-			printf("Digite o %iº peso: ",j + 1, peso[i][j]);
+			printf("Digite o %iÂº peso: ",j + 1, peso[i][j]);
 			scanf("%f",&peso[i][j]);
 			
-			if (peso[i][j] < 0 || peso[i][j] > 10) {
-				do {
-					printf("Peso inválido, informe um valor entre 0 e 10. \n");
-					printf("Digite o %iº peso: ",j + 1, peso[i][j]);
+			while (peso[i][j] < 0 || peso[i][j] > 10) {
+					printf("Peso invÃ¡lido, informe um valor entre 0 e 10. \n");
+					printf("Digite o %iÂº peso: ",j + 1, peso[i][j]);
 					scanf("%f",&peso[i][j]);
-				} while (peso[i][j] < 0 || peso[i][j] > 10);
 			}
 			
 			multiplicacao = notas[i][j] * peso[i][j];
@@ -58,10 +54,10 @@ int main () {
 	for(i = 0; i < DISCIPLINAS; i++){
 		printf("Disciplina: %s \n", disciplinas[i]);
 		for(j = 0; j < NOTAS; j++){
-			printf("%iª nota: %.1f \n", j+1, notas[i][j]);
+			printf("%iÂª nota: %.1f \n", j+1, notas[i][j]);
 		}
 		
-		printf("Média: %.1f \n", media[i]);
+		printf("MÃ©dia: %.1f \n", media[i]);
 		printf("=========================");
 		printf("\n");
 	}
